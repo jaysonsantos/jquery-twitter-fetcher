@@ -12,7 +12,7 @@
     
     var format_text = function (text) {
         text = text.replace(/(http[s]?.\S*)/gi, '<a href="$1">$1</a>');
-        text = text.replace(/#(.\S*)/g, '#<a href="http://twitter.com/search?q=%23$1">$1</a>');
+        text = text.replace(/#(.[^\s,]*)/g, '#<a href="http://twitter.com/search?q=%23$1">$1</a>');
         text = text.replace(/@(.[a-z0-9-_]*)/gi, '@<a href="http://twitter.com/$1">$1</a>');
         return text
     }
