@@ -8,7 +8,6 @@
   <style type="text/css">
     body {
       margin-top: 1.0em;
-      background-color: #8fc656;
       font-family: Helvetica, Arial, FreeSans, san-serif;
       color: #000000;
     }
@@ -16,6 +15,12 @@
       margin: 0 auto;
       width: 700px;
     }
+    #tweets_holder span {
+        display: block;
+    }
+    #tweets_holder li {
+        list-style: none;
+    }    
     h1 { font-size: 3.8em; color: #7039a9; margin-bottom: 3px; }
     h1 .small { font-size: 0.4em; }
     h1 a { text-decoration: none }
@@ -50,9 +55,12 @@
     </div>
 
     <h2>Authors</h2>
-<p>Jayson Reis (jaysonsantos2003@yahoo.com.br)<br/><br/>      </p>
+<p>Jayson Reis (jaysonsantos2003@yahoo.com.br)
+<br/>
+<br/>      </p>
 <h2>Contact</h2>
-<p>Jayson Reis (jaysonsantos2003@yahoo.com.br)<br/>      </p>
+<p>Jayson Reis (jaysonsantos2003@yahoo.com.br)
+<br/>      </p>
 
 
     <h2>Download</h2>
@@ -66,12 +74,18 @@
       <pre>$ git clone git://github.com/jaysonsantos/jquery-twitter-fetcher</pre>
     </p>
 
+    <h2>Example below</h2>
+    <div id="tweets_holder"></div>
     <div class="footer">
       get the source code on GitHub : <a href="http://github.com/jaysonsantos/jquery-twitter-fetcher">jaysonsantos/jquery-twitter-fetcher</a>
     </div>
 
   </div>
 
-  
+  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
+  <script type="text/javascript" src="https://raw.github.com/jaysonsantos/jquery-twitter-fetcher/master/jquery.twitter.fetcher.js"></script>
+  <script type="text/javascript">
+    $('#tweets_holder').twitter_fetcher({user: 'jaysonsantos', limit: 10});
+  </script>
 </body>
 </html>
