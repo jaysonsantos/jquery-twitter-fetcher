@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>jQuery twitter fetcher example</title>
+    </head>
+    <body>
+        <p>This is a silly example and tweets should appear below.</p>
+        <div id="tweets_holder"></div>
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
+        <script type="text/javascript" src="jquery.twitter.fetcher.js"></script>
+        <script type="text/javascript">
+            $('#tweets_holder').twitter_fetcher({user: 'jaysonsantos', limit: 10});
+        </script>
+    </body>
+</html>
