@@ -20,8 +20,6 @@
             } else {
                 return  + hours + ' hours ago';
             }
-            
-            return time_string;
         } else {
             var days = Math.round(created_hours / 24);
             if (days == 1) {
