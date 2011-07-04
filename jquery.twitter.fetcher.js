@@ -1,12 +1,46 @@
 ;(function ($) {
     var holder;
+    
+    format_date = function (date) {
+        var created_hours = (new Date() - new Date(date)) / 1000 / 60 / 60;
+        
+        if (created_hours < 1) {
+            minutes = Math.round(created_hours * 60);
+            if (minutes < 1) {
+                return 'just now';
+            } else if (minutes == 1) {
+                return '1 minute ago';
+            } else {            
+                return  minutes + ' minutes ago';
+            }
+        } else if (created_hours < 24)  {
+            hours = Math.round(created_hours);
+            if (hours == 1) {
+                return '1 hour ago';
+            } else {
+                return  + hours + ' hours ago';
+            }
+            
+            return time_string;
+        } else {
+            days = Math.round(created_hours / 24);
+            if (days == 1) {
+                return  '1 day ago';
+            } else {
+                return days + ' days ago';
+            }
+        }
+    }
+    
     var options = {
         limit: 10,
         profile_name: true,
         profile_screen_name: false,
         profile_image: true,
         user: null,
-        list: null
+        list: null,
+        show_time: true,
+        format_date_callback: format_date
     }
     var list_url = 'https://api.twitter.com/1/lists/statuses.json?callback=?'
     var user_url = 'https://api.twitter.com/1/statuses/user_timeline.json?callback=?'
@@ -35,6 +69,13 @@
                     data[i].user.profile_image_url)
                 );
             }
+
+            if (options.show_time) {
+                tweet.append($('<span>').addClass('date').text(
+                    options.format_date_callback(data[i].created_at))
+                );
+            }
+            
             tweet.append($('<p>').html(
                 format_text(data[i].text)
             ));
