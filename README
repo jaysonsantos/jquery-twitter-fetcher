@@ -1,5 +1,0 @@
-Simple usage:
-$('#tweets_holder').twitter_fetcher({user: 'jaysonsantos', limit: 10});
-
-Check example.html to see it working.
-
