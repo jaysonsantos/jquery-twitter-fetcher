@@ -69,6 +69,10 @@
                     data[i].user.profile_image_url)
                 );
             }
+            
+            tweet.append($('<p>').html(
+                format_text(data[i].text)
+            ));
 
             if (options.show_time) {
                 tweet.append($('<span>').addClass('date').text(
@@ -76,9 +80,6 @@
                 );
             }
             
-            tweet.append($('<p>').html(
-                format_text(data[i].text)
-            ));
             holder.removeClass('loading').find('ul').append(tweet);
         }
     }
