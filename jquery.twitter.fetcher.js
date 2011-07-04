@@ -5,7 +5,7 @@
         var created_hours = (new Date() - new Date(date)) / 1000 / 60 / 60;
         
         if (created_hours < 1) {
-            minutes = Math.round(created_hours * 60);
+            var minutes = Math.round(created_hours * 60);
             if (minutes < 1) {
                 return 'just now';
             } else if (minutes == 1) {
@@ -14,7 +14,7 @@
                 return  minutes + ' minutes ago';
             }
         } else if (created_hours < 24)  {
-            hours = Math.round(created_hours);
+            var hours = Math.round(created_hours);
             if (hours == 1) {
                 return '1 hour ago';
             } else {
@@ -23,7 +23,7 @@
             
             return time_string;
         } else {
-            days = Math.round(created_hours / 24);
+            var days = Math.round(created_hours / 24);
             if (days == 1) {
                 return  '1 day ago';
             } else {
