@@ -33,7 +33,7 @@
             tweet.append($('<p>').html(
                 format_text(data[i].text)
             ));
-            holder.find('ul').append(tweet);
+            holder.removeClass('loading').find('ul').append(tweet);
         }
     }
 
@@ -48,7 +48,7 @@
                 $.error('User is a mandatory option.');
             }
             
-            holder.empty().append($('<ul>'));
+            holder.empty().addClass('loading').append($('<ul>'));
             
             if (options.list) {
                 $.getJSON(list_url, {slug: options.list,
