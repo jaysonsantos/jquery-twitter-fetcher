@@ -28,5 +28,5 @@ jQuery('#tweets_holder').twitter_fetcher({user:'jaysonsantos'}, limit:10,
     format_date_callback: your_callback);
 ```
 
-Where profile_name will show user real name, and format_date_callback will execute a custom callback to display dates for example, if you want to translate that information.
+Where `profile_name` will show user real name, and `format_date_callback` will execute a custom callback to display dates, for example, if you want to translate that information.
 
