@@ -13,7 +13,8 @@ This will show user's tweets inside #tweets_holder.
 If you want to display a user's list do this.
 
 ```javascript
-jQuery('#tweets_holder').twitter_fetcher({user: 'jaysonsantos', limit: 10, list: 'test_list'});
+jQuery('#tweets_holder').twitter_fetcher({user: 'jaysonsantos', limit: 10,
+    list: 'test_list'});
 ```
 
 Check example.html inside the repository to see it working or try the [project GitHub page](http://jaysonsantos.github.com/jquery-twitter-fetcher/).
