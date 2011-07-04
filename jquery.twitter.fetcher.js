@@ -3,6 +3,7 @@
     var options = {
         limit: 10,
         profile_name: true,
+        profile_screen_name: false,
         profile_image: true,
         user: null,
         list: null
@@ -23,6 +24,10 @@
 
             if (options.profile_name) {
                 tweet.append($('<span>').text(data[i].user.name));
+            }
+
+            if (options.profile_screen_name) {
+                tweet.append($('<span>').text('@' + data[i].user.screen_name));
             }
 
             if (options.profile_image) {
