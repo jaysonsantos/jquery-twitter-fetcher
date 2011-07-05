@@ -24,9 +24,9 @@ Check example.html inside the repository to see it working or try the [project G
 You can override some options like this:
 
 ```javascript
-jQuery('#tweets_holder').twitter_fetcher({user:'jaysonsantos'}, limit:10,
+jQuery('#tweets_holder').twitter_fetcher({user:'jaysonsantos', limit:10,
     profile_name: true, profile_screen_name: false,
-    format_date_callback: your_callback);
+    format_date_callback: your_callback});
 ```
 
 Where `profile_name` will show user real name, and `format_date_callback` will execute a custom callback to display dates, for example, if you want to translate that information.
