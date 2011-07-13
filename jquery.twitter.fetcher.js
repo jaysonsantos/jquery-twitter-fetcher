@@ -97,12 +97,12 @@
             
             if (options.list) {
                 $.getJSON(list_url, {slug: options.list,
-                    owner_screen_name: options.user, page: 1,
-                    per_page: options.limit}, process_data
+                    owner_screen_name: options.user, count: options.limit},
+                    process_data
                 );
             } else {
-                $.getJSON(user_url, {screen_name: options.user, page: 1,
-                        per_page: options.limit}, process_data
+                $.getJSON(user_url, {screen_name: options.user,
+                    count: options.limit}, process_data
                 );
             }
         }
